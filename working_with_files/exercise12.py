@@ -1,7 +1,7 @@
 from exceptions import write_exception
 
 
-# xercise12_1
+# exercise12_1
 def create_file(filepath, author_name):
     counter = 0
     try:
