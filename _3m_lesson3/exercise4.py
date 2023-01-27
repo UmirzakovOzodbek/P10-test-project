@@ -1,6 +1,6 @@
 def add_even_number(a, b, c, d):
     def add_inner():
-        if a % 2 == 0 and b % 2 == 0 and c % 2 == 0 and d % 2 == 0:
+        if a % 2 != 0 and b % 2 != 0 and c % 2 != 0 and d % 2 != 0:
             return "Please add only even numbers!"
         else:
             return a + b + c + d
@@ -16,7 +16,7 @@ print(add1())
 
 def multiply_even_number(a, b, c, d):
     def multiply_inner():
-        if a % 2 == 0 and b % 2 == 0 and c % 2 == 0 and d % 2 == 0:
+        if a % 2 != 0 and b % 2 != 0 and c % 2 != 0 and d % 2 != 0:
             return "Please multiply only even numbers!"
         else:
             return a * b * c * d
