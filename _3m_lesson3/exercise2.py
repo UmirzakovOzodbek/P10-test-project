@@ -4,16 +4,8 @@ def get_next_prime():
 
 
 s = get_next_prime()
-print(next(s))
-print(next(s))
-print(next(s))
-print(next(s))
-print(next(s))
-print(next(s))
-print(next(s))
-print(next(s))
-print(next(s))
-print(next(s))
+for i in s:
+    print(next(s))
 
 
 # def get_next_prime():
