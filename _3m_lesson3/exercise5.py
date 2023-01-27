@@ -1,22 +1,22 @@
-def sum_index(type):
-    def sum_inner(a, b, c, d):
-        try:
-            type([a, b, c, d])
-        except TypeError:
+def sum_index(class_):
+    def sum_inner(number):
+        if type(class_) == list:
+            for i in range(len(number)):
+                return sum(number)
+        else:
             return "Please send only list!"
 
     return sum_inner
 
 
-@sum_index
-def sum_(a, b, c, d):
-    for index in [a, b, c, d]:
-        len(index)
-    return sum(index)
+sum1 = sum_index([2, 4, 5, 6])
+sum2 = sum_index((2, 4, 5, 6))
+print(sum1([2, 4, 5, 6]))
+print(sum2((2, 4, 5, 6)))
 
 
-print(sum_([2], [4], [5], [6]))
-print(sum_(1, 2, 3, 4))
+
+
 
 
 
