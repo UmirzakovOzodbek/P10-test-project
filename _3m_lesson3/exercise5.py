@@ -1,22 +1,23 @@
-def sum_index(class_):
-    def sum_inner(number):
-        if type(class_) == list:
-            for i in range(len(number)):
-                return sum(number)
-        else:
-            return "Please send only list!"
+def my_funct(funct):
+    def inner_funct(variable):
+        if type(variable) is not list:
+            return 'Please send only list'
 
-    return sum_inner
+        return funct(variable)
 
-
-sum1 = sum_index([2, 4, 5, 6])
-sum2 = sum_index((2, 4, 5, 6))
-print(sum1([2, 4, 5, 6]))
-print(sum2((2, 4, 5, 6)))
+    return inner_funct
 
 
+@my_funct
+def sum_index(variable_):
+    sum_up = [i for i in variable_]
+    res = sum(sum_up)
+    print(res)
+    return res
 
 
-
+print(sum_index([1, 2, 3]))
+print(sum_index([1, 2]))
+print(sum_index((2, 3)))
 
 

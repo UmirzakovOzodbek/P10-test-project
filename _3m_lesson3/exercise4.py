@@ -1,34 +1,24 @@
-def add_even_number(a, b, c, d):
-    def add_inner():
-        if a % 2 != 0 and b % 2 != 0 and c % 2 != 0 and d % 2 != 0:
+def even_number_filter(number):
+    return number % 2 == 0
+
+
+def only_even_parameters(func):
+    def even_inner(*args):
+        if len(args) == len([num for num in filter(even_number_filter, args)]):
+            return func(*args)
+        else:
             return "Please add only even numbers!"
-        else:
-            return a + b + c + d
 
-    return add_inner
+    return even_inner
 
 
-add = add_even_number(6, 8, 2, 2)
-add1 = add_even_number(1, 4, 2, 2)
-print(add())
-print(add1())
+@only_even_parameters
+def add(a, b):
+    return a + b
 
 
-def multiply_even_number(a, b, c, d):
-    def multiply_inner():
-        if a % 2 != 0 and b % 2 != 0 and c % 2 != 0 and d % 2 != 0:
-            return "Please multiply only even numbers!"
-        else:
-            return a * b * c * d
-
-    return multiply_inner
-
-
-add = add_even_number(6, 8, 2, 2)
-add1 = add_even_number(1, 4, 2, 2)
-print(add())
-print(add1())
-
+print(add(6, 8))
+print(add(1, 4))
 
 
 
