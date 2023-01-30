@@ -6,7 +6,7 @@ def gen_func():
             yield i
 
 
-my_generator = gen_func()
+my_generator = iter(gen_func())
 print(next(my_generator))
 print(next(my_generator))
 print(next(my_generator))
