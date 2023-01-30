@@ -1,9 +1,9 @@
 def gen_func():
     with open('planet.txt', 'r') as f:
         file = f.read()
-    for char in file:
-        if "name" in char:
-            yield char.split("=")[1]
+    for i in file:
+        if "name" in i:
+            yield i.split("=")[1]
 
 
 planets_gen = gen_func()
