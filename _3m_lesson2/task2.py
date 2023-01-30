@@ -40,3 +40,4 @@ instagram_csv_file_path = 'csv_files/list_of_most_followed_instagram_account.csv
 
 file_obj = WorkWithFile(file_1_path, file_2_path, instagram_csv_file_path)
 # print(file_obj.make_data_by_country_name())
+
