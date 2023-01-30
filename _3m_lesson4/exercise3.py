@@ -1,15 +1,27 @@
-def gen_func():
-    with open('planet.txt', 'r') as f:
-        file = f.read()
-    for i in file:
-        if "name" in i:
-            yield i.split("=")[1]
+def read_file(file):
+    with open(file, 'r', encoding='utf8') as f:
+        data = f.readlines()
+        res = []
+        for i in data:
+            if i.split('=')[0][:-1] == 'name':
+                res.append(i.split('=')[1][1:-2])
+        return res
 
 
-planets_gen = gen_func()
-print(next(planets_gen))
-print(next(planets_gen))
-print(next(planets_gen))
-print(next(planets_gen))
+def gen_(file):
+    data = read_file(file)
+    for i in data:
+        yield i
+
+
+file_path = 'planet.txt'
+generator = gen_(file_path)
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+
+
+
 
 

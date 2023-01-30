@@ -1,39 +1,34 @@
 import csv
 
 
-def get_csv():
-    res = []
-    try:
-        with open("countries of the world.csv", "r", encoding="utf8") as f:
-            read_file = csv.reader(f)
-            for i in read_file:
-                res.append(i)
-    except FileNotFoundError as e:
-        print(e)
-    return res
+def read_csv_file():
+    with open('country of the world.csv', 'r', encoding='utf8') as f:
+        cvs_reader = csv.DictReader(f)
+        return [i for i in cvs_reader]
 
 
-def substitution(func):
-    def replace(value):
-        lst = []
-        for i in get_csv():
-            for j in range(len(i)):
-                i[j] = i[j].replace(",", ".")
-            lst.append(i)
-        return func(lst)
+def make_data(func):
+    def replace_(data_):
+        for row in data_:
+            for key, value in row.items():
+                value = value.replace(',', '.')
+                row[key] = value
+        return func(data_)
 
-    return replace
-
-
-@substitution
-def new_file_info(value):
-    try:
-        with open("country of the world2.csv", "w", encoding="utf8") as f:
-            read_file = csv.writer(f)
-            read_file.writerows(value)
-    except FileNotFoundError as e:
-        print(e)
+    return replace_
 
 
-print(substitution(new_file_info(get_csv())))
+@make_data
+def main_func(data_):
+    header = list(data_[0].keys())
+    new_file_path = 'country of the world2.csv'
+    with open(new_file_path, 'w', encoding='utf8') as f:
+        csv_writer = csv.DictWriter(f, header)
+        csv_writer.writeheader()
+        csv_writer.writerows(data)
 
+
+file_path = 'country of the world.csv'
+data = read_csv_file()
+
+print(main_func(data))
