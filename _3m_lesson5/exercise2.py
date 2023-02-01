@@ -3,7 +3,6 @@ import os
 from datetime import datetime
 from tkinter import messagebox, END, Tk, Label, Entry, Button, PhotoImage, Radiobutton, StringVar
 
-
 from person import Person
 
 win = Tk()
@@ -57,8 +56,7 @@ fullname_entry.grid(row=0, column=1)
 # DOB - Date of birth
 dob_label = Label(win, text="DOB: ", padx=20, pady=10)
 dob_label.grid(row=2, column=0)
-# dob_entry = Entry(win, width=30, borderwidth=3)
-
+dob_entry = Entry(win, width=30, borderwidth=3)
 dob_entry.grid(row=2, column=1)
 
 # Phone
