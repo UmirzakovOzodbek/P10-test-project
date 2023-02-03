@@ -97,5 +97,6 @@ clear_btn.place(x=215, y=250)
 exit_btn = Button(window, text="Exit", padx=20, pady=10, command=window.quit)
 exit_btn.place(x=295, y=250)
 
+
 if __name__ == "__main__":
     window.mainloop()
