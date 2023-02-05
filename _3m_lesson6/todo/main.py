@@ -41,7 +41,7 @@ def add():
         if os.path.getsize(file_path) == 0:
             dict_writer.writeheader()
             data.update({"id": 1})
-        data.update({"id": get_prev_task_id() + 1})
+            data.update({"id": get_prev_task_id() + 1})
         dict_writer.writerow(data)
 
     task_entry.delete(0, tk.END)
