@@ -6,7 +6,7 @@ import requests
 
 cor0 = "#FFFFFF"  # White
 cor1 = "#333333"  # Black
-cor2 = "#EB5D51"  # Red
+cor2 = "#006400"  # Red
 
 win = Tk()
 win.geometry("300x320")
