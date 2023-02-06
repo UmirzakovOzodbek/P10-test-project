@@ -6,7 +6,7 @@ import requests
 
 cor0 = "#FFFFFF"  # White
 cor1 = "#333333"  # Black
-cor2 = "#006400"  # Grey
+cor2 = "#006400"  # Green
 
 win = Tk()
 win.geometry("300x320")
@@ -20,7 +20,7 @@ top.grid(row=0, column=0)
 
 main = Frame(win, width=300, height=260, bg=cor0)
 main.grid(row=1, column=0)
-currency = ["UZS", "USD", "EUR", "RUB"]
+currency = ["UZS"]
 
 
 def convert():
